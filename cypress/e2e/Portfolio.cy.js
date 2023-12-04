@@ -8,7 +8,7 @@ const addPortfolio = new AddPortfolio
 
 describe('Add Porfolios', () => {
 
-  it.only('Validate User Essential user is able to add new portfolio with Single Owner with 100% Ownership ', () => {
+  it('Validate User Essential user is able to add new portfolio with Single Owner with 100% Ownership ', () => {
     cy.visit('/',  { timeout: 1000000 }, {failOnStatusCode: false})
     loginPage.signinWithEmail().click()
     loginPage.enterEmail('rafia+24/7.landlord@vimware.com')

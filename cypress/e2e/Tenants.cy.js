@@ -30,7 +30,6 @@ describe('Add Tenant', function(){
                 const pTenantPhone = reuseableCode.getRandomPhoneNumber()
                 addTenant.setPropertyTenantInfo(pTenantFirstName,pTenantLastName,pTenantEmail,pTenantPhone) //pTenantFirstName,pTenantLastName,pTenantEmail,pTenantPhone
                 //Set Rent Amount Detail
-                cy.pause()
         addTenant.setRentAmountDetail()
                 //Set First Rent Payment info
         addTenant.setFirstRentPaymentInfo()
@@ -42,6 +41,8 @@ describe('Add Tenant', function(){
         addTenant.inviteToArrivo()
                 //save Primary Tenant Info
         addTenant.savePrimaryTenantInfo()
-       
+        cy.wait(5000)
+        addTenant.goToTenantSection() //Click on Tenant menu
+        cy.get('.owner-card').should('exist') //Validate the Tenant creation
     })
 })
