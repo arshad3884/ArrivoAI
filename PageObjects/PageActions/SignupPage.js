@@ -48,6 +48,7 @@ export class SignupPage{
     cy.wait(5000)
     cy.get('.mb-4').click() // Click to focus out the cursor from input field
     cy.get('.w-100').click() //next button
+    cy.wait(2000)
     cy.get('strong').should('have.text','Success') //success confirmation toast
     cy.get('.modal-content').should('exist') //instructionModal
     cy.get('.btn-close').click() //closeInstructionModal

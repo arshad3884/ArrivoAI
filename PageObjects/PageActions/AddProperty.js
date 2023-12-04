@@ -13,7 +13,7 @@ export class AddProperty
         cy.get('.w-100 > :nth-child(1) > :nth-child(1) > :nth-child(2) > .mb-3 > .form-control')
             .should('have.attr', 'placeholder', 'Enter a location').type(address).wait(3000).type('{downarrow}{enter}') //enter address and select first suggesion
         cy.get(':nth-child(2) > :nth-child(1) > .mb-3 > .css-b62m3t-container > .form-select__control')
-            .click().type('{uparrow}{enter}') //select property type: Space
+            .click().wait(1000).type('{uparrow}{enter}') //select property type: Space
         cy.get('.w-100 > :nth-child(1) > :nth-child(2) > :nth-child(2) > .mb-3 > .form-control')
             .should('have.attr','placeholder','Enter Number of Spaces').type(spaces) //add Number of spaces
         cy.get(':nth-child(3) > .mb-3 > .css-b62m3t-container > .form-select__control').click().wait(1000).type('{downarrow}{enter}') //select property status as active 
@@ -36,7 +36,7 @@ export class AddProperty
         cy.wait(2000)
         cy.get('.btn-reset').click() //close space detail popup
         cy.get(':nth-child(1) > .p-0 > .list-group > :nth-child(1) > :nth-child(2) > :nth-child(1) > .unit-inputGroup > .form-control')
-            .click().type('{enter}') //enter in Space ID field to save changes
+            .click().wait(1000).type('{enter}') //enter in Space ID field to save changes
         cy.wait(5000)
         cy.get('[style="margin-top: 5px; margin-left: 13px;"] > :nth-child(1) > strong').should('exist') //Validate success toast
 
